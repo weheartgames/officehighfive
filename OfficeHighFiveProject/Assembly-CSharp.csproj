@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\ScorePointsForWalls.cs" />
      <Compile Include="Assets\Typogenic\Demos\StarWarsIntro.cs" />
      <Compile Include="Assets\Typogenic\Scripts\SerializedDictionary.cs" />
      <Compile Include="Assets\Typogenic\Scripts\TypogenicFont.cs" />

@@ -46,5 +46,17 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
+
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.tag == "Boundary")
+		{
+			return;
+		}
+		Debug.Log (other.name);
+		Destroy(other.gameObject);
+		Destroy(gameObject);
+		Time.timeScale = 0.0F;
+	}
 	
 }
