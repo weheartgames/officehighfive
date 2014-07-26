@@ -46,7 +46,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Typogenic\Demos\StarWarsIntro.cs" />
+     <Compile Include="Assets\Typogenic\Scripts\SerializedDictionary.cs" />
+     <Compile Include="Assets\Typogenic\Scripts\TypogenicFont.cs" />
+     <Compile Include="Assets\Typogenic\Scripts\TypogenicText.cs" />
+     <None Include="Assets\Typogenic\Readme.txt" />
+     <None Include="Assets\Fonts\Visitor\font.fnt" />
+     <None Include="Assets\Typogenic\Shaders\TypogenicLit.shader" />
+     <None Include="Assets\Typogenic\Demos\Curly Stars\Curly Stars.fnt" />
+     <None Include="Assets\Fonts\Visitor\visitor.fnt" />
+     <None Include="Assets\Typogenic\Demos\Arial\Arial.fnt" />
+     <None Include="Assets\Typogenic\Changelog.txt" />
+     <None Include="Assets\Typogenic\Shaders\TypogenicUnlit.shader" />
+     <None Include="Assets\Typogenic\Shaders\TypogenicLitTextured.shader" />
+     <None Include="Assets\Typogenic\Shaders\TypogenicUnlitTextured.shader" />
+     <None Include="Assets\Typogenic\Demos\News Cycle\News Cycle.fnt" />
+     <None Include="Assets\Typogenic\Demos\Heydings\Heydings.fnt" />
+     <None Include="Assets\Typogenic\LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

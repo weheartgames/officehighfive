@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 targetPosition = new Vector3 (0,0,3f);
 	public float moveSpeed = 1;
 
+	public float jumpSpeed = 100.0f;
+
 	void Start()
 	{
 		playerTransform = transform;
@@ -15,7 +17,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update(){
-		if (Input.GetButtonDown("Fire1")) {
+		if (Input.GetButtonDown("Fire1")) 
+		{
 
 			if (currentLane == 0)
 			{
@@ -25,7 +28,6 @@ public class PlayerController : MonoBehaviour {
 			{
 				currentLane = 0;
 			}
-
 
 		}
 
@@ -37,5 +39,12 @@ public class PlayerController : MonoBehaviour {
 			playerTransform.Translate (new Vector3(0,0,moveSpeed) * Time.deltaTime);
 		}
 
+		if (Input.GetButtonDown("Fire2") && playerTransform.position.y <= 0) 
+		{
+			//animation.Play("jump_pose");
+			rigidbody.AddForce(Vector3.up * jumpSpeed);
+		}
+
 	}
+	
 }
