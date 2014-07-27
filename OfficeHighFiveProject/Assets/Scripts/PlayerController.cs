@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject audioHitWall;
 	public GameObject audioHiFive;
-	public GameObject lostMultiplier;
 
 	public int multiplier;
 	public GUIText multiplierText;
@@ -76,7 +75,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	
 			
-		if (other.tag == "Person")
+		if (other.tag == "Female" || other.tag == "Male")
 		{
 			//Increase multiplier
 
@@ -88,13 +87,13 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 
-		Debug.Log (other.name);
+		Debug.Log (other.tag);
 		//Destroy(other.gameObject);
 		//Destroy(gameObject);
 		Time.timeScale = 0.0F;
 		audioHitWall.audio.Play();
 		gameOver = true;
-		Debug.Log("Game is over: " + gameOver);
+		//Debug.Log("Game is over: " + gameOver);
 	}
 	
 }

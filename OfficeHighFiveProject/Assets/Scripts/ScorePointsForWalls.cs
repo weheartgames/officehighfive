@@ -39,7 +39,7 @@ public class ScorePointsForWalls : MonoBehaviour {
 			gameController.AddWallsPassed(1);
 		}
 
-		if (other.tag == "Person")
+		if (other.tag == "Female" || other.tag == "Male")
 		{
 			//reset multiplier
 			playerControllerObject.GetComponent<PlayerController>().multiplier = 1;
