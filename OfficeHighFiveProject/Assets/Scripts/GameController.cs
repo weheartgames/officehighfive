@@ -24,16 +24,24 @@ public class GameController : MonoBehaviour {
 
 	public GUIText scoreText;
 	private int score;
+	public GUIText finalScoreText;
 
 //	private int multiplier;
 
 	public GUIText wallsPassedText;
 	private int wallsPassed;
 
+	void Update(){
+		if (Time.timeScale == 0.0F)
+		{
+			finalScoreText.text = "" + score;
+		}
+	}
+
 	void Start()
 	{
 		score = 0;
-//		multiplier = 1;
+		finalScoreText.text = "";
 		UpdateScore();
 		UpdateWallsPassed();
 

@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 
-		Debug.Log (other.tag);
+		//Debug.Log (other.tag);
 		//Destroy(other.gameObject);
 		//Destroy(gameObject);
 		Time.timeScale = 0.0F;

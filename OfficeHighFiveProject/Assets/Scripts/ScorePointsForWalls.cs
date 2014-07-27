@@ -30,7 +30,7 @@ public class ScorePointsForWalls : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) 
 	{
-		Debug.Log(other.tag);
+		//Debug.Log(other.tag);
 		if (other.tag == "Obstacle")
 		{
 			//score a wall
