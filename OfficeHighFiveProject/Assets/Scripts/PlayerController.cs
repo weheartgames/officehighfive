@@ -5,21 +5,29 @@ public class PlayerController : MonoBehaviour {
 
 	private Transform playerTransform;
 	private int currentLane;
-	public Vector3 targetPosition = new Vector3 (0,0,3f);
+	public Vector3 targetPosition = new Vector3 (0,0,5f);
 	public float moveSpeed = 1;
 
 	public float jumpSpeed = 100.0f;
+
+	public int multiplier;
+	public GUIText multiplierText;
+
+	private bool gameOver;
 
 	void Start()
 	{
 		playerTransform = transform;
 		currentLane = 0;
+		multiplier = 1;
+		multiplierText.text = "Multiplier: 1";
 	}
 
 	void Update(){
+		multiplierText.text = "Multiplier: " + multiplier;
+
 		if (Input.GetButtonDown("Fire1")) 
 		{
-
 			if (currentLane == 0)
 			{
 				currentLane = 1;
@@ -28,14 +36,13 @@ public class PlayerController : MonoBehaviour {
 			{
 				currentLane = 0;
 			}
-
 		}
 
 		if (currentLane == 0 && playerTransform.position.z >= 0){
 			//playerTransform.position = Vector3.zero;
 			
 			playerTransform.Translate (new Vector3 (0,0,-moveSpeed) * Time.deltaTime);
-		} else if (currentLane == 1 && playerTransform.position.z <= 3){
+		} else if (currentLane == 1 && playerTransform.position.z <= 5){
 			playerTransform.Translate (new Vector3(0,0,moveSpeed) * Time.deltaTime);
 		}
 
@@ -45,6 +52,11 @@ public class PlayerController : MonoBehaviour {
 			rigidbody.AddForce(Vector3.up * jumpSpeed);
 		}
 
+		if (gameOver == true && Input.anyKey)
+		{
+			Time.timeScale = 1.0F;
+			Application.LoadLevel("MainScene");
+		}
 	}
 
 	void OnTriggerEnter(Collider other) 
@@ -53,10 +65,25 @@ public class PlayerController : MonoBehaviour {
 		{
 			return;
 		}
+	
+			
+		if (other.tag == "Person")
+		{
+			//Increase multiplier
+
+			multiplier++;
+			multiplierText.text = "Multiplier: " + multiplier;
+			other.tag = "TaggedPerson";
+			//gameController.AddScore(1 * multiplier);
+			return;
+		}
+
 		Debug.Log (other.name);
-		Destroy(other.gameObject);
-		Destroy(gameObject);
+		//Destroy(other.gameObject);
+		//Destroy(gameObject);
 		Time.timeScale = 0.0F;
+		gameOver = true;
+		Debug.Log("Game is over: " + gameOver);
 	}
 	
 }

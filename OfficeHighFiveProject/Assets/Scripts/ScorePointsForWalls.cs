@@ -4,7 +4,9 @@ using System.Collections;
 public class ScorePointsForWalls : MonoBehaviour {
 
 	public GameController gameController;
-	public int multiplier;
+	private int multiplier;
+
+	GameObject playerControllerObject;
 
 	void Start()
 	{
@@ -15,18 +17,30 @@ public class ScorePointsForWalls : MonoBehaviour {
 		{
 			gameController = gameControllerObject.GetComponent<GameController>();
 		}
+
+		playerControllerObject = GameObject.FindWithTag ("Player");
+		if (playerControllerObject != null)
+		{
+			multiplier = playerControllerObject.GetComponent<PlayerController>().multiplier;
+
+		}
 	}
 
 	void OnTriggerEnter(Collider other) 
 	{
-		
-			
+		Debug.Log(other.tag);
 		if (other.tag == "Obstacle")
 		{
-			Debug.Log("score a wall");
+			//score a wall
+			multiplier = playerControllerObject.GetComponent<PlayerController>().multiplier;
 			gameController.AddScore(1 * multiplier);
 			gameController.AddWallsPassed(1);
 		}
 
+		if (other.tag == "Person")
+		{
+			//reset multiplier
+			playerControllerObject.GetComponent<PlayerController>().multiplier = 1;
+		}
 	}
 }
