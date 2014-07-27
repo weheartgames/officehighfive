@@ -7,6 +7,8 @@ public class ScorePointsForWalls : MonoBehaviour {
 	private int multiplier;
 
 	GameObject playerControllerObject;
+	
+	public GameObject audioLostMultiplier;
 
 	void Start()
 	{
@@ -41,6 +43,7 @@ public class ScorePointsForWalls : MonoBehaviour {
 		{
 			//reset multiplier
 			playerControllerObject.GetComponent<PlayerController>().multiplier = 1;
+			audioLostMultiplier.audio.Play();
 		}
 	}
 }

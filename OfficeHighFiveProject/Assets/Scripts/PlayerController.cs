@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject audioHitWall;
 	public GameObject audioHiFive;
+	public GameObject lostMultiplier;
 
 	public int multiplier;
 	public GUIText multiplierText;
