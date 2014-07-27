@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 	private bool gameOver;
 
 	public Animator playerAnimation;
+	public List<AudioSource> listOfFemaleHiFiveAudio = new List<AudioSource>();
+	public List<AudioSource> listOfMaleHiFiveAudio = new List<AudioSource>();
 
 	void Start()
 	{
@@ -81,9 +84,19 @@ public class PlayerController : MonoBehaviour {
 
 			multiplier++;
 			multiplierText.text = "Multiplier: " + multiplier;
-			other.tag = "TaggedPerson";
-			audioHiFive.audio.Play();
+
+			//audioHiFive.audio.Play();
 			playerAnimation.SetTrigger("isHighFiving");
+			if (other.tag == "Female")
+			{
+				//play random female hi5 clip
+				listOfFemaleHiFiveAudio[Random.Range (0, listOfFemaleHiFiveAudio.Count)].Play();
+			} else 
+			{
+				//play random male hi5 clip
+				listOfMaleHiFiveAudio[Random.Range (0, listOfMaleHiFiveAudio.Count)].Play();
+			}
+			other.tag = "TaggedPerson";
 			return;
 		}
 
