@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
 	private bool gameOver;
 
+	public Animator playerAnimation;
+
 	void Start()
 	{
 		playerTransform = transform;
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour {
 			multiplierText.text = "Multiplier: " + multiplier;
 			other.tag = "TaggedPerson";
 			audioHiFive.audio.Play();
+			playerAnimation.SetTrigger("isHighFiving");
 			return;
 		}
 
