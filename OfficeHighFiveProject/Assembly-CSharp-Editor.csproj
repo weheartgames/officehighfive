@@ -46,6 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtil.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilFlip.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilGUI.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilGrid.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilMenuItems.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilNudge.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilRotate.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilSnap.cs" />
+     <Compile Include="Assets\TransformUtilities\Editor\TransformUtilVars.cs" />
      <Compile Include="Assets\Typogenic\Editor\TypogenicFontEditor.cs" />
      <Compile Include="Assets\Typogenic\Editor\TypogenicFontWizard.cs" />
      <Compile Include="Assets\Typogenic\Editor\TypogenicMaterialEditor.cs" />
@@ -57,6 +66,7 @@
      <None Include="Assets\Fonts\Visitor\visitor.fnt" />
      <None Include="Assets\Typogenic\Demos\Arial\Arial.fnt" />
      <None Include="Assets\Typogenic\Changelog.txt" />
+     <None Include="Assets\TransformUtilities\README.txt" />
      <None Include="Assets\Typogenic\Shaders\TypogenicUnlit.shader" />
      <None Include="Assets\Typogenic\Shaders\TypogenicLitTextured.shader" />
      <None Include="Assets\Typogenic\Shaders\TypogenicUnlitTextured.shader" />

@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour {
 
 	public float jumpSpeed = 100.0f;
 
+	public GameObject audioHitWall;
+	public GameObject audioHiFive;
+
 	public int multiplier;
 	public GUIText multiplierText;
 
@@ -48,8 +51,11 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetButtonDown("Fire2") && playerTransform.position.y <= 0) 
 		{
+			//JUMP
 			//animation.Play("jump_pose");
 			rigidbody.AddForce(Vector3.up * jumpSpeed);
+
+			audio.Play ();
 		}
 
 		if (gameOver == true && Input.anyKey)
@@ -74,7 +80,7 @@ public class PlayerController : MonoBehaviour {
 			multiplier++;
 			multiplierText.text = "Multiplier: " + multiplier;
 			other.tag = "TaggedPerson";
-			//gameController.AddScore(1 * multiplier);
+			audioHiFive.audio.Play();
 			return;
 		}
 
@@ -82,6 +88,7 @@ public class PlayerController : MonoBehaviour {
 		//Destroy(other.gameObject);
 		//Destroy(gameObject);
 		Time.timeScale = 0.0F;
+		audioHitWall.audio.Play();
 		gameOver = true;
 		Debug.Log("Game is over: " + gameOver);
 	}
