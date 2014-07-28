@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour {
 			multiplier++;
 			multiplierText.text = "Multiplier: " + multiplier;
 
-			//audioHiFive.audio.Play();
+			audioHiFive.audio.Play();
 			playerAnimation.SetTrigger("isHighFiving");
 			if (other.tag == "Female")
 			{
